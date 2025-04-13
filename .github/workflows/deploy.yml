@@ -1,4 +1,4 @@
-name: Deploy samudbhav to EC2 
+name: Deploy samudbhav to EC2
 
 on:
   push:
@@ -22,7 +22,9 @@ jobs:
           script: |
             echo "Deploying samudbhav..."
             cd ~/react-multi-app/samudbhav
-            git pull origin ProdTs
+            git fetch origin ProdTs
+            git checkout ProdTs || git checkout -b ProdTs origin/ProdTs
+            git reset --hard origin/ProdTs
 
             cd ~/react-multi-app
             sudo docker-compose build samudbhav
