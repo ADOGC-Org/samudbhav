@@ -1,0 +1,31 @@
+name: Deploy samudbhav to EC2
+
+on:
+  push:
+    branches:
+      - ProdTs
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "Deploying samudbhav..."
+            cd ~/react-multi-app/samudbhav
+            git fetch origin ProdTs
+            git checkout ProdTs || git checkout -b ProdTs origin/ProdTs
+            git reset --hard origin/ProdTs
+
+            cd ~/react-multi-app
+            sudo docker-compose build samudbhav
+            sudo docker-compose up -d samudbhav
