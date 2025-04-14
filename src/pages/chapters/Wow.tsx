@@ -1,7 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const wow = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -34,8 +39,11 @@ const wow = () => {
             We're currently working on bringing you detailed information about our WOEMCH initiatives, 
             success stories, and opportunities to get involved. Please check back soon!
           </p>
-          <Button asChild className="bg-youit-woemch hover:bg-youit-woemch/90">
+          {/* <Button asChild className="bg-youit-woemch hover:bg-youit-woemch/90">
             <Link to="/">Return to Home</Link>
+          </Button> */}
+          <Button asChild className="bg-[rgb(79_70_229_/var(--tw-bg-opacity,1))] hover:bg-[rgb(79_70_229_/0.9)]">
+              <Link to="/">Return to Home</Link>
           </Button>
         </div>
       </section>

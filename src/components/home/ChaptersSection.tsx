@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 const chapters = [
   {
-    id: "woemch",
+    id: "wow",
     name: "WoW",
     title: "Women of Wonders : Empowering women",
     description: "Dedicated to uplifting rural women through education, skill development, and sustainable livelihood opportunities.",
@@ -14,7 +14,7 @@ const chapters = [
     image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    id: "smtl",
+    id: "supatham",
     name: "Supatham",
     title: "Supatham : A Way to Wisdom",
     description: "Providing knowledge in various fields to empower individuals.",
@@ -23,7 +23,7 @@ const chapters = [
     image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    id: "sholi",
+    id: "adrishyaa",
     name: "Adrishyaa",
     title: "Cummunity based E-Commerce Platform",
     description: "An online marketplace focused on ethical products supporting local communities and sustainable practices.",

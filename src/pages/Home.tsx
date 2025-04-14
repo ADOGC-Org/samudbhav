@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import ChaptersSection from "@/components/home/ChaptersSection";
 import ImageCarousel from "@/components/home/ImageCarousel";
@@ -8,6 +9,10 @@ import RegisterForm from "@/components/home/RegisterForm";
 import DonateSection from "@/components/home/DonateSection";
 
 const Home = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
   // This would normally come from authentication state
   const [isLoggedIn] = useState(false);
 

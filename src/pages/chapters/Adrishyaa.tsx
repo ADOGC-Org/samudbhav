@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Adrishyaa = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -35,9 +41,22 @@ const Adrishyaa = () => {
             We're currently working on bringing you our Adrishyaa e-commerce platform with ethical products 
             that support sustainable development and fair trade. Please check back soon!
           </p>
-          <Button asChild className="bg-youit-sholi hover:bg-youit-sholi/90">
+          {/* <Button asChild className="bg-youit-sholi hover:bg-youit-sholi/90">
             <Link to="/">Return to Home</Link>
           </Button>
+          <Button asChild className="bg-youit-sholi hover:bg-youit-sholi/90">
+            <Link to="http://adrishyaa.live">Visit the site</Link>
+          </Button> */}
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+            <Button asChild className="bg-[rgb(79_70_229_/var(--tw-bg-opacity,1))] hover:bg-[rgb(79_70_229_/0.9)]">
+              <Link to="/">Return to Home</Link>
+            </Button>
+            <Button asChild className="bg-youit-sholi hover:bg-youit-sholi/90">
+              <Link to="http://adrishyaa.live" target="_blank" rel="noopener noreferrer">
+                Visit the site
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

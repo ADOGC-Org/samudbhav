@@ -1,7 +1,14 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container py-12">
       <div className="text-center mb-12">

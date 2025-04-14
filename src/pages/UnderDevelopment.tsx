@@ -2,8 +2,14 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Construction, Home } from "lucide-react";
+import { useEffect } from "react";
 
 const UnderDevelopment = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 bg-gray-50">
       <div className="text-center max-w-md">

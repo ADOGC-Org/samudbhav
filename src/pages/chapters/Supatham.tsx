@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Supatham = () => {
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -34,9 +40,16 @@ const Supatham = () => {
             We're currently working on bringing you detailed information about our Supatham educational programs, 
             learning resources, and opportunities to participate. Please check back soon!
           </p>
-          <Button asChild className="bg-youit-smtl hover:bg-youit-smtl/90">
-            <Link to="/">Return to Home</Link>
-          </Button>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+            <Button asChild className="bg-[rgb(79_70_229_/var(--tw-bg-opacity,1))] hover:bg-[rgb(79_70_229_/0.9)]">
+              <Link to="/">Return to Home</Link>
+            </Button>
+            <Button asChild className="bg-youit-sholi hover:bg-youit-sholi/90">
+              <Link to="http://supatham.me" target="_blank" rel="noopener noreferrer">
+                Visit the site
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
