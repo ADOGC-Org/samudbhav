@@ -9,6 +9,7 @@ import {
   User, 
   LogOut,
   Menu,
+  Mail,
   X
 } from "lucide-react";
 import {
@@ -99,6 +100,13 @@ const Header = () => {
             </Button>
           </Link>
 
+          <Link to="/newsletter">
+            <Button variant="ghost" className="flex items-center gap-1">
+              <Mail size={16} />
+              <span>NewsLetter</span>
+            </Button>
+          </Link>
+
           <Link to="/about-us">
             <Button variant="ghost" className="flex items-center gap-1">
               <Info size={16} />
@@ -174,6 +182,11 @@ const Header = () => {
                 <span>Donate</span>
               </Link>
               
+              <Link to="/newsletter" onClick={toggleMenu} className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+                <Mail size={16} />
+                <span>NewsLetter</span>
+              </Link>
+
               <Link to="/about-us" onClick={toggleMenu} className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
                 <Info size={16} />
                 <span>About Us</span>
